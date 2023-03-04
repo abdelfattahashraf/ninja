@@ -1,0 +1,151 @@
+:root {
+    --mainColor: #1D1D41;
+
+}
+
+@font-face {
+    font-family: mareka;
+    src: url(./mareka.otf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: var(--mainColor);
+    background-image: url(../img/background.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+/* Start Header */
+li, a {
+    font-weight: 500;
+    font-size: 16px;
+    color: #f9f9f9;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 80px;
+}
+
+.logo {
+    width: 100px;
+    cursor: pointer;
+}
+
+.neon {
+    font-weight: 400;
+    font-size: 40px;
+    font-family: mareka;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fefefe;
+    text-shadow: 0 0 10px rgb(255, 0, 0);
+    padding: 0 0 0 22.5vh;
+}
+.neon1 {
+    font-weight: 400;
+    font-size: 40px;
+    font-family: mareka;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fefefe;
+    text-shadow: 0 0 10px rgb(255, 0, 0);
+}
+
+header .neon1 {
+    display: none;
+}
+.nav_links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav_links li a {
+    transition: all 0.3 ease 0s;
+}
+
+.nav_links:hover a {
+    opacity: 0.25;
+}
+
+.nav_links a:hover {
+    opacity: 1;
+}
+
+nav #check {
+    display: none;
+}
+
+nav label #btn,
+nav label #cancel {
+    color: #565981;
+    font-size: 30px;
+    display: none;
+}
+
+@media (max-width: 888px) {
+
+    header .neon {
+        display: none;
+    }
+    header .neon1 {
+        display: block;
+    }
+    .nav_links li {
+        display: block;
+    }
+    .nav_links li a {
+        transition: all 0.3 ease 0s;
+    }
+    
+    .nav_links:hover a {
+        opacity: 0.25;
+    }
+    
+    .nav_links a:hover {
+        opacity: 1;
+    }
+    nav label #btn {
+        display: block;
+    }
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 60vh;
+        background-color: #1e1e41;
+        top: 100px;
+        right: -100%;
+        text-align: center;
+        transition: all 1.5s;
+    }
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    nav #check:checked ~ ul {
+        right: 0;
+    }
+    nav #check:checked ~ label #btn {
+        display: none;
+    }
+    nav #check:checked ~ label #cancel {
+        display: block;
+    }
+
+}
+
+/* End Header */
